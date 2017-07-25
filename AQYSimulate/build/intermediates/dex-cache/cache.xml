@@ -3,21 +3,21 @@
 
     <item
         is-multidex="true"
-        jar="E:\work\Android\AndroidStudioProjects\MyAndroidProject\AQYSimulate\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jar="E:\work\Android\AndroidStudioProjects\AQISimulate\AQYSimulate\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
         revision="26.0.0"
-        sha1="acb45111a0a49209ab23d52de8b85b00fbf0baa2">
-        <dex dex="E:\work\Android\AndroidStudioProjects\MyAndroidProject\AQYSimulate\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_2ca36d6b71609cff990f9ef20a46f1c9624b5aa7\classes.dex" />
+        sha1="3be0e169b510c0dbc24cfa0e57b46f09428730c6">
+        <dex dex="E:\work\Android\AndroidStudioProjects\AQISimulate\AQYSimulate\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_3c6b4a45aa2ced34855037c9d3a954efbf948489\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="E:\work\Android\AndroidStudioProjects\MyAndroidProject\AQYSimulate\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jar="E:\work\Android\AndroidStudioProjects\AQISimulate\AQYSimulate\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
         jumboMode="true"
         optimize="true"
         revision="26.0.0"
         sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
-        <dex dex="E:\work\Android\AndroidStudioProjects\MyAndroidProject\AQYSimulate\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_7a460ea14fef036008b992a194ad3ec39aa21578\classes.dex" />
+        <dex dex="E:\work\Android\AndroidStudioProjects\AQISimulate\AQYSimulate\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_c54a1f8a25c3b3ef405e6dadd9b05a636576dd3a\classes.dex" />
     </item>
 
 </items>

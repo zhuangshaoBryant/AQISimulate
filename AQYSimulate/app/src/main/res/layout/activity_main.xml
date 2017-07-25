@@ -6,6 +6,7 @@
 
 
     <RelativeLayout
+        android:id="@+id/title_relativeLayout"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:background="@color/black"
@@ -15,17 +16,34 @@
             android:id="@+id/title_qiyi"
             android:layout_width="wrap_content"
             android:layout_height="24dp"
-            android:scaleType="fitStart"
             android:layout_alignParentLeft="true"
             android:paddingLeft="10dp"
+            android:scaleType="fitStart"
             android:src="@drawable/title_qiyi" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:gravity="center_horizontal"
+            android:text="乐活"
+            android:textColor="@color/prime"
+            android:textSize="18sp"
+            android:visibility="gone" />
+        <View
+            android:id="@+id/right_base"
+            android:layout_width="1dp"
+            android:layout_height="24dp"
+            android:layout_alignParentRight="true"
+            android:visibility="invisible"/>
 
         <ImageView
             android:id="@+id/ico_plus"
             android:layout_width="24dp"
             android:layout_height="24dp"
-            android:layout_alignParentRight="true"
-            android:layout_marginRight="10dp"
+            android:layout_toLeftOf="@id/right_base"
+            android:layout_marginRight="20dp"
             android:src="@drawable/title_plus_bg" />
 
 
@@ -67,8 +85,8 @@
         <RadioButton
             android:id="@+id/tuijian"
             style="@style/Bottom_Tab_Style"
-            android:drawableTop="@drawable/ico_top_msg_bg_bottom"
             android:checked="true"
+            android:drawableTop="@drawable/ico_top_msg_bg_bottom"
             android:text="推荐" />
 
         <RadioButton
@@ -80,7 +98,7 @@
         <RadioButton
             android:id="@+id/vip"
             style="@style/Bottom_Tab_Style"
-            android:drawableTop="@drawable/ico_top_msg_bg_bottom"
+            android:drawableTop="@drawable/ico_vip_bg_bottom"
             android:text="VIP会员" />
 
         <RadioButton
@@ -97,7 +115,6 @@
             android:text="泡泡" />
 
     </RadioGroup>
-
 
 
 </LinearLayout>

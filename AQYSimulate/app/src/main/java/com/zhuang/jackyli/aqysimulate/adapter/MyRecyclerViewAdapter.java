@@ -15,7 +15,14 @@ import java.util.List;
  * Created by jackyli on 2017/7/24.
  */
 
-public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAdapter.ViewHolder> {
+public class MyRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+    public static final int TYPE1 = 1;
+    public static final int TYPE2 = 2;
+    public static final int TYPE3 = 3;
+    public static final int TYPE4 = 4;
+    public static final int TYPE5 = 5;
+    public static final int TYPE6 = 6;
+
     private List<String> list;
 
     public MyRecyclerViewAdapter(List<String> list) {
@@ -23,15 +30,25 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
     }
 
     @Override
-    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.recycler_item, parent, false);
-        ViewHolder holder = new ViewHolder(view);
-        return holder;
+    public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View view;
+        RecyclerView.ViewHolder holder;
+        switch (viewType) {
+            case TYPE1:
+                view = LayoutInflater.from(parent.getContext()).inflate(R.layout.type1_divide_recyclerview_item, parent, false);
+                holder = new Model1Holder(view);
+                return holder;
+            case TYPE2:
+                view = LayoutInflater.from(parent.getContext()).inflate(R.layout.type2_recyclerview_item, parent, false);
+                holder = new Model2Holder(view);
+                return holder;
+        }
+        return null;
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
-        holder.textView.setText(list.get(position));
+    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+
     }
 
     @Override
@@ -39,14 +56,27 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
         return list.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
-        ImageView imageView;
-        TextView textView;
+    @Override
+    public int getItemViewType(int position) {
+        return super.getItemViewType(position);
+    }
 
-        public ViewHolder(View itemView) {
+    public static class Model1Holder extends RecyclerView.ViewHolder {
+        public Model1Holder(View itemView) {
             super(itemView);
-            imageView = (ImageView) itemView.findViewById(R.id.image);
-            textView = (TextView) itemView.findViewById(R.id.text);
         }
     }
+
+    public static class Model2Holder extends RecyclerView.ViewHolder {
+        ImageView mLeftIconImageview;
+        TextView mTextTextview, mRightTextview;
+
+        public Model2Holder(View itemView) {
+            super(itemView);
+            mLeftIconImageview = (ImageView) itemView.findViewById(R.id.left_icon_imageview);
+            mTextTextview = (TextView) itemView.findViewById(R.id.text_textview);
+            mRightTextview = (TextView) itemView.findViewById(R.id.right_textview);
+        }
+    }
+
 }

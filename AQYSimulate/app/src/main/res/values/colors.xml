@@ -6,6 +6,8 @@
     <color name="black">#ff000000</color>
     <color name="prime">#ffffff</color>
     <color name="gray">#5c5a5a</color>
+    <color name="vip">#ae9191</color>
+    <color name="blue">#4949c9</color>
 
 
 </resources>

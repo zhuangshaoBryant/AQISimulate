@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:paddingRight="1dp"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/left_pic"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scaleType="centerCrop"
+                android:src="@drawable/horizontal_picture" />
+
+            <ImageView
+                android:id="@+id/left_rifht_up_title"
+                android:layout_width="wrap_content"
+                android:layout_height="15dp"
+                android:layout_gravity="right"
+                android:gravity="center"
+                android:src="@drawable/src_assets_pprn_see_all_arrow"/>
+            <TextView
+                android:id="@+id/left_right_bottom_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right|bottom"
+                android:gravity="center"
+                android:padding="2dp"
+                android:text="26集全"
+                android:textColor="@color/prime"
+                android:textSize="10sp" />
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/left_up_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="中国新歌声"
+            android:textColor="@color/black"
+            android:textSize="13sp" />
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:paddingLeft="1dp"
+        android:paddingRight="1dp"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/middle_pic"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scaleType="centerCrop"
+                android:src="@drawable/horizontal_picture" />
+
+            <ImageView
+                android:id="@+id/middle_rifht_up_title"
+                android:layout_width="wrap_content"
+                android:layout_height="15dp"
+                android:layout_gravity="right"
+                android:gravity="center"
+                android:src="@drawable/src_assets_pprn_see_all_arrow" />
+            <TextView
+                android:id="@+id/middle_right_bottom_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right|bottom"
+                android:gravity="center"
+                android:padding="2dp"
+                android:text="26集全"
+                android:textColor="@color/prime"
+                android:textSize="10sp" />
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/middle_up_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="中国新歌声"
+            android:textColor="@color/black"
+            android:textSize="13sp" />
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:paddingLeft="1dp"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/right_pic"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scaleType="centerCrop"
+                android:src="@drawable/horizontal_picture" />
+
+            <ImageView
+                android:id="@+id/right_rifht_up_title"
+                android:layout_width="wrap_content"
+                android:layout_height="15dp"
+                android:layout_gravity="right"
+                android:gravity="center"
+                android:src="@drawable/src_assets_pprn_see_all_arrow" />
+            <TextView
+                android:id="@+id/right_right_bottom_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right|bottom"
+                android:gravity="center"
+                android:padding="2dp"
+                android:text="26集全"
+                android:textColor="@color/prime"
+                android:textSize="10sp" />
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/right_up_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="中国新歌声"
+            android:textColor="@color/black"
+            android:textSize="13sp" />
+
+
+
+    </LinearLayout>
+</LinearLayout>

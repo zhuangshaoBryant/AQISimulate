@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:padding="10dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/left_green_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="更多母婴知识"
+            android:textColor="@color/colorPrimary"
+            android:paddingRight="10dp"
+            android:textSize="13sp"
+            />
+
+        <ImageView
+            android:id="@+id/left_green_imageview"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:src="@drawable/src_assets_pprn_see_all_arrow"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:padding="10dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/right_green_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="换一批"
+            android:textColor="@color/colorPrimary"
+            android:paddingRight="10dp"
+            android:textSize="13sp"
+            />
+
+        <ImageView
+            android:id="@+id/right_green_imageview"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:src="@drawable/qrlogin_refresh"/>
+
+    </LinearLayout>
+
+</LinearLayout>
