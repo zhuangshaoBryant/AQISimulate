@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/black"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:id="@+id/title_qiyi"
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
+            android:scaleType="fitStart"
+            android:layout_alignParentLeft="true"
+            android:paddingLeft="10dp"
+            android:src="@drawable/title_qiyi" />
+
+        <ImageView
+            android:id="@+id/ico_plus"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/title_plus_bg" />
+
+
+        <ImageView
+            android:id="@+id/ico_rec"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginRight="20dp"
+            android:layout_toLeftOf="@+id/ico_plus"
+            android:src="@drawable/title_rc_bg" />
+
+
+        <ImageView
+            android:id="@+id/ico_msg"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginRight="20dp"
+            android:layout_toLeftOf="@id/ico_rec"
+            android:src="@drawable/ico_top_msg_bg" />
+
+
+    </RelativeLayout>
+
+
+    <FrameLayout
+        android:id="@+id/content_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <RadioGroup
+        android:id="@+id/rg_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/prime"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/tuijian"
+            style="@style/Bottom_Tab_Style"
+            android:drawableTop="@drawable/ico_top_msg_bg_bottom"
+            android:checked="true"
+            android:text="推荐" />
+
+        <RadioButton
+            android:id="@+id/lehuo"
+            style="@style/Bottom_Tab_Style"
+            android:drawableTop="@drawable/ico_top_msg_bg_bottom"
+            android:text="乐活" />
+
+        <RadioButton
+            android:id="@+id/vip"
+            style="@style/Bottom_Tab_Style"
+            android:drawableTop="@drawable/ico_top_msg_bg_bottom"
+            android:text="VIP会员" />
+
+        <RadioButton
+            android:id="@+id/my"
+            style="@style/Bottom_Tab_Style"
+            android:drawableTop="@drawable/ico_top_msg_bg_bottom"
+            android:text="我的" />
+
+        <RadioButton
+            android:id="@+id/paopao"
+            style="@style/Bottom_Tab_Style"
+            android:drawableTop="@drawable/ico_top_msg_bg_bottom"
+
+            android:text="泡泡" />
+
+    </RadioGroup>
+
+
+
+</LinearLayout>
