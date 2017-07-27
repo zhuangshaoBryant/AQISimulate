@@ -15,6 +15,7 @@ import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.facebook.drawee.backends.pipeline.Fresco;
 import com.zhuang.jackyli.aqysimulate.fragment.LehuoFragment;
 import com.zhuang.jackyli.aqysimulate.fragment.MeFragment;
 import com.zhuang.jackyli.aqysimulate.fragment.PaopaoFragment;

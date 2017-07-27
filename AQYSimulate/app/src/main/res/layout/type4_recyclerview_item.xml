@@ -23,7 +23,7 @@
                 android:src="@drawable/horizontal_picture" />
 
             <ImageView
-                android:id="@+id/left_rifht_up_title"
+                android:id="@+id/left_right_up_pic"
                 android:layout_width="wrap_content"
                 android:layout_height="15dp"
                 android:layout_gravity="right"
@@ -39,18 +39,37 @@
                 android:text="26集全"
                 android:textColor="@color/prime"
                 android:textSize="10sp" />
+            <TextView
+                android:id="@+id/left_left_bottom_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left|bottom"
+                android:gravity="center"
+                android:padding="2dp"
+                android:text="今日00:00发布"
+                android:textColor="@color/prime"
+                android:textSize="10sp" />
         </FrameLayout>
 
         <TextView
             android:id="@+id/left_up_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"
             android:padding="5dp"
-            android:text="中国新歌声"
+            android:text="中国新歌声奥斯卡都结婚了的返回时代峰峻"
+            android:maxLines="1"
+            android:ellipsize="end"
             android:textColor="@color/black"
             android:textSize="13sp" />
-
+        <TextView
+            android:id="@+id/left_down_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="991人在看"
+            android:textColor="@color/gray"
+            android:textSize="11sp" />
 
 
     </LinearLayout>
@@ -97,9 +116,10 @@
             android:id="@+id/middle_up_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"
             android:padding="5dp"
-            android:text="中国新歌声"
+            android:text="中国新歌声奥斯卡都结婚了的返回时代峰峻"
+            android:maxLines="1"
+            android:ellipsize="end"
             android:textColor="@color/black"
             android:textSize="13sp" />
 
@@ -148,9 +168,10 @@
             android:id="@+id/right_up_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"
             android:padding="5dp"
             android:text="中国新歌声"
+            android:maxLines="1"
+            android:ellipsize="end"
             android:textColor="@color/black"
             android:textSize="13sp" />
 

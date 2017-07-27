@@ -22,7 +22,7 @@
             android:textSize="13sp"
             />
 
-        <ImageView
+        <com.facebook.drawee.view.SimpleDraweeView
             android:id="@+id/left_green_imageview"
             android:layout_width="12dp"
             android:layout_height="12dp"
@@ -48,12 +48,13 @@
             android:textSize="13sp"
             />
 
-        <ImageView
+        <com.facebook.drawee.view.SimpleDraweeView
             android:id="@+id/right_green_imageview"
             android:layout_width="12dp"
             android:layout_height="12dp"
             android:src="@drawable/qrlogin_refresh"/>
 
     </LinearLayout>
+
 
 </LinearLayout>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:gravity="center"
+    android:padding="20dp">
+
+    <TextView
+        android:id="@+id/green_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="更多母婴知识"
+        android:textColor="@color/colorPrimary"
+        android:paddingRight="10dp"
+        android:textSize="14sp"
+        />
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/green_imageview"
+        android:layout_width="12dp"
+        android:layout_height="12dp"
+        android:src="@drawable/src_assets_pprn_see_all_arrow"/>
+
+
+</LinearLayout>
+
