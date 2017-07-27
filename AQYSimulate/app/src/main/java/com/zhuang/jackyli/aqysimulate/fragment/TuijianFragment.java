@@ -1,18 +1,25 @@
 package com.zhuang.jackyli.aqysimulate.fragment;
 
 
+import android.app.Application;
+import android.content.Context;
+import android.icu.util.BuddhistCalendar;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.zhuang.jackyli.aqysimulate.MyApplication;
 import com.zhuang.jackyli.aqysimulate.R;
 import com.zhuang.jackyli.aqysimulate.adapter.MyFragmentAdapter;
 import com.zhuang.jackyli.aqysimulate.fragmentpager.ContentFragment;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,7 +27,7 @@ import java.util.List;
  * A simple {@link Fragment} subclass.
  */
 public class TuijianFragment extends Fragment {
-
+    private static String TAG = "TuijianFragment";
     private TabLayout mTabLayout;
     private ViewPager mViewPager;
     private MyFragmentAdapter mFragmentAdapter;
@@ -31,6 +38,38 @@ public class TuijianFragment extends Fragment {
         // Required empty public constructor
     }
 
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        Log.d(TAG, "onAttach: ");
+        /*if(getArguments()!=null){
+            fragments = (List<Fragment>) getArguments().getSerializable("fragments");
+        }*/
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        Log.d(TAG, "onDetach: ");
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        Log.d(TAG, "onDestroy: ");
+    }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        Log.d(TAG, "onActivityCreated: ");
+    }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        Log.d(TAG, "onCreate: ");
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -39,13 +78,27 @@ public class TuijianFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_tuijian, container, false);
         mTabLayout = (TabLayout) view.findViewById(R.id.tablayout);
         mViewPager = (ViewPager) view.findViewById(R.id.viewpager);
-        init();//初始化Fragment与titles
-        mFragmentAdapter = new MyFragmentAdapter(getActivity().getSupportFragmentManager(),fragments,titles);
+        if(fragments==null){
+            init();//初始化Fragment与titles
+        }
+
+        Log.d(TAG, "getActivity: "+getActivity());
+        mFragmentAdapter = new MyFragmentAdapter(getChildFragmentManager() , fragments, titles);
         mViewPager.setAdapter(mFragmentAdapter);
         mTabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);
         mTabLayout.setupWithViewPager(mViewPager);
+        Log.d(TAG, "onCreateView: ");
         return view;
     }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        /*Bundle b = new Bundle();
+        b.putSerializable("fragments", (Serializable) fragments);
+        setArguments(b);*/
+    }
+
 
     private void init() {
         fragments = new ArrayList<>();

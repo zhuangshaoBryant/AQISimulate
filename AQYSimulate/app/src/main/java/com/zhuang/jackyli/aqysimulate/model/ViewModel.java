@@ -1,15 +1,17 @@
 package com.zhuang.jackyli.aqysimulate.model;
 
+import android.os.Parcelable;
 import android.support.v7.widget.RecyclerView;
 import android.view.ViewGroup;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
  * Created by jackyli on 2017/7/26.
  */
 
-public class ViewModel{
+public class ViewModel implements Serializable{
     private List<BaseModel> baseModels;
     private int modelType;
 

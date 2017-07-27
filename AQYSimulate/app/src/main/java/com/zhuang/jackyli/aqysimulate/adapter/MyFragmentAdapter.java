@@ -20,10 +20,6 @@ public class MyFragmentAdapter extends FragmentPagerAdapter{
         this.titles = titles;
     }
 
-    public MyFragmentAdapter(FragmentManager fm) {
-        super(fm);
-    }
-
     @Override
     public Fragment getItem(int position) {
         return fragments.get(position);

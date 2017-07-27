@@ -1,10 +1,12 @@
 package com.zhuang.jackyli.aqysimulate.model;
 
+import java.io.Serializable;
+
 /**
  * Created by jackyli on 2017/7/26.
  */
 
-public class BaseModel {
+public class BaseModel implements Serializable{
     private String firstPic;//第一个图url
     private String secondPic;//第二个图的url
 

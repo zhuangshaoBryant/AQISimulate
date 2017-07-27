@@ -13,13 +13,6 @@ import java.util.List;
  */
 
 public class MyRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
-    public static final int TYPE1 = 1;
-    public static final int TYPE2 = 2;
-    public static final int TYPE3 = 3;
-    public static final int TYPE4 = 4;
-    public static final int TYPE5 = 5;
-    public static final int TYPE6 = 6;
-    private static final String TAG = "Model346HolderTest";
 
     private List<ViewModel> list;
 

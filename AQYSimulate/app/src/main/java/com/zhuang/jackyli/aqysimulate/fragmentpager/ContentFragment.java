@@ -1,21 +1,29 @@
 package com.zhuang.jackyli.aqysimulate.fragmentpager;
 
 
+import android.content.Context;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.zhuang.jackyli.aqysimulate.R;
 import com.zhuang.jackyli.aqysimulate.adapter.MyRecyclerViewAdapter;
-import com.zhuang.jackyli.aqysimulate.model.BaseModel;
+import com.zhuang.jackyli.aqysimulate.data.ViewModelData;
 import com.zhuang.jackyli.aqysimulate.model.ViewModel;
 
+import java.io.Serializable;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -23,11 +31,71 @@ import java.util.List;
 public class ContentFragment extends Fragment {
 
     RecyclerView mCardRecyclerView;
+    private List<ViewModel> mDataList;
+   private static final String TAG = "ContentFragment" ;
 
     public ContentFragment() {
         // Required empty public constructor
     }
 
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        //可以在这里保存临时数据
+        //saveStateToArguments();
+    }
+
+
+
+    private void saveStateToArguments() {
+        Bundle b = new Bundle();
+        if (mDataList != null) {
+            b.putSerializable(TAG, (Serializable) mDataList);
+            setArguments(b);
+        }
+
+    }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        Log.d(TAG, "onCreate: ");
+    }
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        Log.d(TAG, "onAttach: ");
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        Log.d(TAG, "onDetach: ");
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        Log.d(TAG, "onDestroy: ");
+    }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        /*if(getArguments()!=null){
+            mDataList = (List<ViewModel>) getArguments().getSerializable(TAG);
+            Log.d(TAG, "onActivityCreated: "+mDataList.size());
+        }*/
+    }
+
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        //可以在这里保存临时数据
+       /* saveStateToArguments();*/
+        Log.d(TAG, "onDestroyView: "+mDataList.size());
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -35,60 +103,44 @@ public class ContentFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_content, container, false);
         mCardRecyclerView = (RecyclerView) view.findViewById(R.id.card_recyclerView);
-        String firstBigPic = "https://raw.githubusercontent.com/zhuangshaoBryant/MyAndroidProject/master/Screenshots/6.png";
-        String firstBigPic2 = "https://raw.githubusercontent.com/zhuangshaoBryant/MyAndroidProject/master/Screenshots/7.jpg";
-        String secondSmallPic = "https://raw.githubusercontent.com/zhuangshaoBryant/MyAndroidProject/master/Screenshots/8.png";
 
-        List<ViewModel> list = new ArrayList<>();
-        list.add(new ViewModel(1));//添加type1
 
-        //添加type2
-        List<BaseModel> baseModel2s = new ArrayList<>();
-        BaseModel baseModel2 = new BaseModel(secondSmallPic, null, "壮少直播", "快来点击看看吧",null, null);
-        baseModel2s.add(baseModel2);
-        list.add(new ViewModel(baseModel2s, 2));
-        //添加type3
-        for (int i = 0; i < 3; i++) {
-            List<BaseModel> baseModel3461s = new ArrayList<>();
-            BaseModel left = new BaseModel(firstBigPic, secondSmallPic, "大标题", "小标题","14:12", "2017/7/26" );
-            BaseModel middle = new BaseModel(firstBigPic2, secondSmallPic, "大标题2", "小标题2","14:13", "2017/7/27");
-            baseModel3461s.add(left);
-            baseModel3461s.add(middle);
-            ViewModel model346 = new ViewModel(baseModel3461s, 3);
-            list.add(model346);
+        try {
+            if(mDataList==null){
+                mDataList = new ArrayList<>();
+                List<ViewModel> list1 = initData();
+                mDataList.addAll(list1);
+            }
+        } catch (NoSuchMethodException e) {
+            e.printStackTrace();
+        } catch (InvocationTargetException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
         }
-        //添加type7
-        List<BaseModel> baseMode7s = new ArrayList<>();
-        BaseModel baseMode7 = new BaseModel(secondSmallPic, null, "查看更多内容", null,null, null);
-        BaseModel baseMode72 = new BaseModel(secondSmallPic, null, "换一批", null,null, null);
-        baseMode7s.add(baseMode7);
-        baseMode7s.add(baseMode72);
-        list.add(new ViewModel(baseMode7s, 7));
-
-        list.add(new ViewModel(1));//添加type1
-
-        //添加type2
-        List<BaseModel> baseModel2ss = new ArrayList<>();
-        BaseModel baseModel22 = new BaseModel(secondSmallPic, null, "壮少直播", "快来点击看看吧",null, null);
-        baseModel2ss.add(baseModel22);
-        list.add(new ViewModel(baseModel2ss, 2));
-
-        for (int i = 0; i < 10; i++) {
-            List<BaseModel> baseModel3461s = new ArrayList<>();
-            BaseModel left = new BaseModel(firstBigPic, secondSmallPic, "大标题", "小标题","14:12", "2017/7/26");
-            BaseModel middle = new BaseModel(firstBigPic2, secondSmallPic, "大标题", "小标题","14:13", "2017/7/27");
-            BaseModel right = new BaseModel(firstBigPic2, secondSmallPic, "大标题", "小标题","14:13", "2017/7/27");
-            baseModel3461s.add(left);
-            baseModel3461s.add(middle);
-            baseModel3461s.add(right);
-            ViewModel model346 = new ViewModel(baseModel3461s, 4);
-            list.add(model346);
-        }
-        MyRecyclerViewAdapter mRecyclerViewAdapter = new MyRecyclerViewAdapter(list);
+        Log.d("hhh", mDataList.size() + "zuizhong ");
+        MyRecyclerViewAdapter mRecyclerViewAdapter = new MyRecyclerViewAdapter(mDataList);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
         mCardRecyclerView.setLayoutManager(linearLayoutManager);
         mCardRecyclerView.setAdapter(mRecyclerViewAdapter);
+        Log.d(TAG, "onCreateView: "+mDataList.size());
         return view;
+    }
+
+    @NonNull
+    private List<ViewModel> initData() throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
+        List list = new ArrayList();
+        ViewModelData data = new ViewModelData();
+        Class clazz = data.getClass();
+        Random random = new Random();//默认构造方法
+        for (int i = 0; i < 30; i++) {
+            int s = random.nextInt(5) + 1;
+            String methodName = "addCard" + s;
+            Method method = clazz.getMethod(methodName);
+            List<ViewModel> list1 = (List<ViewModel>) method.invoke(data);
+            list.addAll(list1);
+        }
+        return list;
     }
 
 }
