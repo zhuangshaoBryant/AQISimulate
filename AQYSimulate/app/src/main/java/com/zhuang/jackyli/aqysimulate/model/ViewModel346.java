@@ -1,5 +1,6 @@
 package com.zhuang.jackyli.aqysimulate.model;
 
+import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -7,7 +8,11 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.facebook.drawee.backends.pipeline.Fresco;
+import com.facebook.drawee.interfaces.DraweeController;
 import com.facebook.drawee.view.SimpleDraweeView;
+import com.facebook.imagepipeline.request.ImageRequest;
+import com.facebook.imagepipeline.request.ImageRequestBuilder;
 import com.zhuang.jackyli.aqysimulate.R;
 
 /**
@@ -23,69 +28,21 @@ public class ViewModel346 implements AbsModel {
         mModel346Holder = (ViewModel346Holder) holder;
         switch (viewModel.getModelType()){
             case 6:
-                bindLeftData(viewModel);
+                bindLeftData(viewModel,1.8f);
                 break;
             case 3:
                 //左图设置
-                bindLeftData(viewModel);
+                bindLeftData(viewModel,1.8f);
                 //中图设置
-                bindMiddleData(viewModel);
+                bindMiddleData(viewModel,1.8f);
                 break;
             case 4:
-                bindLeftData(viewModel);
-                bindMiddleData(viewModel);
-                bindRightData(viewModel);
+                bindLeftData(viewModel,0.76f);
+                bindMiddleData(viewModel,0.76f);
+                bindRightData(viewModel,0.76f);
                 break;
             default:
         }
-    }
-    /**
-     *
-     * @param viewModel
-     * 绑定右边的数据
-     */
-    private void bindRightData(ViewModel viewModel) {
-        BaseModel middle = viewModel.getBaseModels().get(2);
-        mModel346Holder.mRightDownTitle.setText(middle.getSecondText());
-        mModel346Holder.mRightUpTitle.setText(middle.getFirstText());
-        mModel346Holder.mRightLeftBottomText.setText(middle.getThirdText());
-        mModel346Holder.mRightRightBottomText.setText(middle.getFourText());
-        mModel346Holder.mRightPicImageview.setAspectRatio(1.5f);
-        mModel346Holder.mRightPicImageview.setImageURI(middle.getFirstPic());
-        mModel346Holder.mRightRightUpPic.setAspectRatio(1.5f);
-        mModel346Holder.mRightRightUpPic.setImageURI(middle.getSecondPic());
-    }
-    /**
-     *
-     * @param viewModel
-     * 绑定中间的数据
-     */
-    private void bindMiddleData(ViewModel viewModel) {
-        BaseModel middle = viewModel.getBaseModels().get(1);
-        mModel346Holder.mMiddleDownTitle.setText(middle.getSecondText());
-        mModel346Holder.mMiddleUpTitle.setText(middle.getFirstText());
-        mModel346Holder.mMiddleLeftBottomText.setText(middle.getThirdText());
-        mModel346Holder.mMiddleRightBottomText.setText(middle.getFourText());
-        mModel346Holder.mMiddlePicImageview.setAspectRatio(1.5f);
-        mModel346Holder.mMiddlePicImageview.setImageURI(middle.getFirstPic());
-        mModel346Holder.mMiddleRightUpPic.setAspectRatio(1.5f);
-        mModel346Holder.mMiddleRightUpPic.setImageURI(middle.getSecondPic());
-    }
-    /**
-     *
-     * @param viewModel
-     * 绑定左边的数据
-     */
-    private void bindLeftData(ViewModel viewModel) {
-        BaseModel left = viewModel.getBaseModels().get(0);
-        mModel346Holder.mLeftDownTitle.setText(left.getSecondText());
-        mModel346Holder.mLeftUpTitle.setText(left.getFirstText());
-        mModel346Holder.mLeftLeftBottomText.setText(left.getThirdText());
-        mModel346Holder.mLeftRightBottomText.setText(left.getFourText());
-        mModel346Holder.mLeftPicImageview.setAspectRatio(1.5f);
-        mModel346Holder.mLeftRightUpPic.setAspectRatio(1.5f);
-        mModel346Holder.mLeftPicImageview.setImageURI(left.getFirstPic());
-        mModel346Holder.mLeftRightUpPic.setImageURI(left.getSecondPic());
     }
 
     @Override
@@ -102,6 +59,7 @@ public class ViewModel346 implements AbsModel {
                 mMiddleRightBottomText, mMiddleLeftBottomText, mMiddleUpTitle, mMiddleDownTitle,
                 mRightRightBottomText, mRightLeftBottomText, mRightUpTitle, mRightDownTitle;
         LinearLayout mLinearLayout;
+
         public ViewModel346Holder(View itemView,int modelType,ViewGroup parent) {
             super(itemView);
             mLinearLayout = (LinearLayout) itemView.findViewById(R.id.linear_layout);
@@ -163,5 +121,66 @@ public class ViewModel346 implements AbsModel {
             mLeftUpTitle = (TextView) leftView.findViewById(R.id.up_title);
             mLeftDownTitle = (TextView) leftView.findViewById(R.id.down_title);
         }
+    }
+
+    /**
+     *
+     * @param viewModel
+     * 绑定右边的数据
+     */
+    private void bindRightData(ViewModel viewModel,float radio) {
+        BaseModel right = viewModel.getBaseModels().get(2);
+        mModel346Holder.mRightDownTitle.setText(right.getSecondText());
+        mModel346Holder.mRightUpTitle.setText(right.getFirstText());
+        mModel346Holder.mRightLeftBottomText.setText(right.getThirdText());
+        mModel346Holder.mRightRightBottomText.setText(right.getFourText());
+        mModel346Holder.mRightRightUpPic.setAspectRatio(1.5f);
+        mModel346Holder.mRightRightUpPic.setImageURI(right.getSecondPic());
+        DraweeController draweeController = Fresco.newDraweeControllerBuilder()
+                .setUri(Uri.parse(right.getFirstPic()))
+                .setAutoPlayAnimations(true)
+                .build();
+        mModel346Holder.mRightPicImageview.setAspectRatio(radio);
+        mModel346Holder.mRightPicImageview.setController(draweeController);
+    }
+    /**
+     *
+     * @param viewModel
+     * 绑定中间的数据
+     */
+    private void bindMiddleData(ViewModel viewModel,float radio) {
+        BaseModel middle = viewModel.getBaseModels().get(1);
+        mModel346Holder.mMiddleDownTitle.setText(middle.getSecondText());
+        mModel346Holder.mMiddleUpTitle.setText(middle.getFirstText());
+        mModel346Holder.mMiddleLeftBottomText.setText(middle.getThirdText());
+        mModel346Holder.mMiddleRightBottomText.setText(middle.getFourText());
+        mModel346Holder.mMiddleRightUpPic.setAspectRatio(1.5f);
+        mModel346Holder.mMiddleRightUpPic.setImageURI(middle.getSecondPic());
+        DraweeController draweeController = Fresco.newDraweeControllerBuilder()
+                .setUri(Uri.parse(middle.getFirstPic()))
+                .setAutoPlayAnimations(true)
+                .build();
+        mModel346Holder.mMiddlePicImageview.setAspectRatio(radio);
+        mModel346Holder.mMiddlePicImageview.setController(draweeController);
+    }
+    /**
+     *
+     * @param viewModel
+     * 绑定左边的数据
+     */
+    private void bindLeftData(ViewModel viewModel,float radio) {
+        BaseModel left = viewModel.getBaseModels().get(0);
+        mModel346Holder.mLeftDownTitle.setText(left.getSecondText());
+        mModel346Holder.mLeftUpTitle.setText(left.getFirstText());
+        mModel346Holder.mLeftLeftBottomText.setText(left.getThirdText());
+        mModel346Holder.mLeftRightBottomText.setText(left.getFourText());
+        mModel346Holder.mLeftRightUpPic.setAspectRatio(1.5f);
+        mModel346Holder.mLeftRightUpPic.setImageURI(left.getSecondPic());
+        DraweeController draweeController = Fresco.newDraweeControllerBuilder()
+                .setUri(Uri.parse(left.getFirstPic()))
+                .setAutoPlayAnimations(true)
+                .build();
+        mModel346Holder.mLeftPicImageview.setAspectRatio(radio);
+        mModel346Holder.mLeftPicImageview.setController(draweeController);
     }
 }

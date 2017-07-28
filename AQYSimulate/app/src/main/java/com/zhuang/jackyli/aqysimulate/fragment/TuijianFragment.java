@@ -35,40 +35,6 @@ public class TuijianFragment extends Fragment {
     private List<String> titles; //fragment集合
 
     public TuijianFragment() {
-        // Required empty public constructor
-    }
-
-    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        Log.d(TAG, "onAttach: ");
-        /*if(getArguments()!=null){
-            fragments = (List<Fragment>) getArguments().getSerializable("fragments");
-        }*/
-    }
-
-    @Override
-    public void onDetach() {
-        super.onDetach();
-        Log.d(TAG, "onDetach: ");
-    }
-
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
-        Log.d(TAG, "onDestroy: ");
-    }
-
-    @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-        Log.d(TAG, "onActivityCreated: ");
-    }
-
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        Log.d(TAG, "onCreate: ");
     }
 
     @Override
@@ -90,15 +56,6 @@ public class TuijianFragment extends Fragment {
         Log.d(TAG, "onCreateView: ");
         return view;
     }
-
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        /*Bundle b = new Bundle();
-        b.putSerializable("fragments", (Serializable) fragments);
-        setArguments(b);*/
-    }
-
 
     private void init() {
         fragments = new ArrayList<>();

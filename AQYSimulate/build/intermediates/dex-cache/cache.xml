@@ -102,6 +102,15 @@
     </item>
     <item
         is-multidex="true"
+        jar="C:\Users\jackyli\.android\build-cache\7ea358e7b98b284bec35cb7f25648b4b393f7b07\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="131115ec18ae3951c1584c543de8baa9ac20012a">
+        <dex dex="E:\work\Android\AndroidStudioProjects\AQISimulate\AQYSimulate\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_939f851c5e1f29e479f876f214e73b32ec0f8baf\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="C:\Users\jackyli\.android\build-cache\839ead98b9b1db1633276bed0b40c1c005b3fcfa\output\jars\classes.jar"
         jumboMode="true"
         optimize="true"
@@ -207,6 +216,24 @@
         revision="26.0.0"
         sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
         <dex dex="E:\work\Android\AndroidStudioProjects\AQISimulate\AQYSimulate\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_c54a1f8a25c3b3ef405e6dadd9b05a636576dd3a\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\jackyli\.android\build-cache\ab2b98bcbce2afc782d14c43ce59b7d4b83f6cba\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="af569955834f3c39a77438f581e966fb01e96a6b">
+        <dex dex="E:\work\Android\AndroidStudioProjects\AQISimulate\AQYSimulate\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_b616ac9a977b77ac39ca9f37320ae436df6bf252\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\jackyli\.android\build-cache\2119acad1374f17404d49395e559d5538ffd2a58\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="6092f7afd81ab96a31bff733fce3d0f09d8bc8ed">
+        <dex dex="E:\work\Android\AndroidStudioProjects\AQISimulate\AQYSimulate\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_6104042bf08d689065208861f0dc935fbe27678e\classes.dex" />
     </item>
     <item
         is-multidex="true"

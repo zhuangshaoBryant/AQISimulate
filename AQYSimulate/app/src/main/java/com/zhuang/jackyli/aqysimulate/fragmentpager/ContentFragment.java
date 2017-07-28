@@ -32,10 +32,9 @@ public class ContentFragment extends Fragment {
 
     RecyclerView mCardRecyclerView;
     private List<ViewModel> mDataList;
-   private static final String TAG = "ContentFragment" ;
+    private static final String TAG = "ContentFragment";
 
     public ContentFragment() {
-        // Required empty public constructor
     }
 
     @Override
@@ -45,7 +44,12 @@ public class ContentFragment extends Fragment {
         //saveStateToArguments();
     }
 
-
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        //可以在这里保存临时数据
+        //saveStateToArguments();
+    }
 
     private void saveStateToArguments() {
         Bundle b = new Bundle();
@@ -57,47 +61,6 @@ public class ContentFragment extends Fragment {
     }
 
     @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        Log.d(TAG, "onCreate: ");
-    }
-    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        Log.d(TAG, "onAttach: ");
-    }
-
-    @Override
-    public void onDetach() {
-        super.onDetach();
-        Log.d(TAG, "onDetach: ");
-    }
-
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
-        Log.d(TAG, "onDestroy: ");
-    }
-
-    @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-        /*if(getArguments()!=null){
-            mDataList = (List<ViewModel>) getArguments().getSerializable(TAG);
-            Log.d(TAG, "onActivityCreated: "+mDataList.size());
-        }*/
-    }
-
-
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        //可以在这里保存临时数据
-       /* saveStateToArguments();*/
-        Log.d(TAG, "onDestroyView: "+mDataList.size());
-    }
-
-    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
@@ -106,7 +69,7 @@ public class ContentFragment extends Fragment {
 
 
         try {
-            if(mDataList==null){
+            if (mDataList == null) {
                 mDataList = new ArrayList<>();
                 List<ViewModel> list1 = initData();
                 mDataList.addAll(list1);
@@ -123,7 +86,7 @@ public class ContentFragment extends Fragment {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
         mCardRecyclerView.setLayoutManager(linearLayoutManager);
         mCardRecyclerView.setAdapter(mRecyclerViewAdapter);
-        Log.d(TAG, "onCreateView: "+mDataList.size());
+        Log.d(TAG, "onCreateView: " + mDataList.size());
         return view;
     }
 
