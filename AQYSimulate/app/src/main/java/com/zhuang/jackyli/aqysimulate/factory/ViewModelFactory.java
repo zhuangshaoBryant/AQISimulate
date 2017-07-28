@@ -8,6 +8,7 @@ import com.zhuang.jackyli.aqysimulate.model.ViewModel1;
 import com.zhuang.jackyli.aqysimulate.model.ViewModel2;
 import com.zhuang.jackyli.aqysimulate.model.ViewModel346;
 import com.zhuang.jackyli.aqysimulate.model.ViewModel578;
+import com.zhuang.jackyli.aqysimulate.model.ViewModel9;
 
 /**
  * Created by jackyli on 2017/7/27.
@@ -33,6 +34,9 @@ public class ViewModelFactory {
             case 8:
                 new ViewModel578().onBindData(holder, viewModel);
                 break;
+            case 9:
+                new ViewModel9().onBindData(holder, viewModel);
+                break;
             default:
         }
     }
@@ -52,6 +56,8 @@ public class ViewModelFactory {
             case 7:
             case 8:
                 return new ViewModel578().getViewHolder(parent, modelType);
+            case 9:
+                return new ViewModel9().getViewHolder(parent, modelType);
             default:
 
         }

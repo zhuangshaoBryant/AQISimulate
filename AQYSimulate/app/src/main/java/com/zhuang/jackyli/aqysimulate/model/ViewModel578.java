@@ -105,7 +105,7 @@ public class ViewModel578 implements AbsModel {
 
         private void addRightView(ViewGroup parent, LinearLayout.LayoutParams params) {
             View rightView;
-            rightView = LayoutInflater.from(parent.getContext()).inflate(R.layout.base_type5_layout, mLinearLayout, false);
+            rightView = LayoutInflater.from(parent.getContext()).inflate(R.layout.base_type578_layout, mLinearLayout, false);
             rightView.setLayoutParams(params);
             mLinearLayout.addView(rightView);
             mRightGreenSimpleDraweeView = (SimpleDraweeView) rightView.findViewById(R.id.green_imageview);
@@ -114,7 +114,7 @@ public class ViewModel578 implements AbsModel {
 
         private void addMiddleView(ViewGroup parent, LinearLayout.LayoutParams params) {
             View middleView;
-            middleView = LayoutInflater.from(parent.getContext()).inflate(R.layout.base_type5_layout, mLinearLayout, false);
+            middleView = LayoutInflater.from(parent.getContext()).inflate(R.layout.base_type578_layout, mLinearLayout, false);
             middleView.setLayoutParams(params);
             mLinearLayout.addView(middleView);
             mMiddleGreenSimpleDraweeView = (SimpleDraweeView) middleView.findViewById(R.id.green_imageview);
@@ -123,7 +123,7 @@ public class ViewModel578 implements AbsModel {
 
         private void addLeftView(ViewGroup parent, LinearLayout.LayoutParams params) {
             View leftView;
-            leftView = LayoutInflater.from(parent.getContext()).inflate(R.layout.base_type5_layout, mLinearLayout, false);
+            leftView = LayoutInflater.from(parent.getContext()).inflate(R.layout.base_type578_layout, mLinearLayout, false);
             leftView.setLayoutParams(params);
             mLinearLayout.addView(leftView);
             mLeftGreenSimpleDraweeView = (SimpleDraweeView) leftView.findViewById(R.id.green_imageview);

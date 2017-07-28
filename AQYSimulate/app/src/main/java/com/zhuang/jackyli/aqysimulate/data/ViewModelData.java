@@ -17,6 +17,11 @@ public class ViewModelData {
     String verticalPic = "https://raw.githubusercontent.com/zhuangshaoBryant/MyAndroidProject/master/Screenshots/9.jpg";//竖图
     String smallPic2 =  "https://raw.githubusercontent.com/zhuangshaoBryant/MyAndroidProject/master/Screenshots/10.png";//1080p小图
     String dongPic =  "https://raw.githubusercontent.com/zhuangshaoBryant/MyAndroidProject/master/Screenshots/12.gif";//动图gif
+    //四个轮播图
+    String lunboPic1 = "https://raw.githubusercontent.com/zhuangshaoBryant/MyAndroidProject/master/Screenshots/13.jpg";//轮播图1
+    String lunboPic2 = "https://raw.githubusercontent.com/zhuangshaoBryant/MyAndroidProject/master/Screenshots/14.jpg";//轮播图2
+    String lunboPic3 = "https://raw.githubusercontent.com/zhuangshaoBryant/MyAndroidProject/master/Screenshots/15.jpg";//轮播图3
+    String lunboPic4 = "https://raw.githubusercontent.com/zhuangshaoBryant/MyAndroidProject/master/Screenshots/16.jpg";//轮播图4
 
     /**
      * type1+type2+3个type3+type7
@@ -187,6 +192,34 @@ public class ViewModelData {
         baseMode7s.add(baseMode72);
         baseMode7s.add(baseMode73);
         list.add(new ViewModel(baseMode7s, 8));
+        return list;
+    }
+    /**
+     * 轮播图
+     *
+     * @return
+     */
+    public List<ViewModel> addCard6() {
+        List<ViewModel> list = new ArrayList<>();
+        //添加type2
+        List<BaseModel> baseModel2s = new ArrayList<>();
+        BaseModel baseModel2 = new BaseModel(smallPic, null, "Card6推荐", "名侦探柯南", null, null);
+        baseModel2s.add(baseModel2);
+        list.add(new ViewModel(baseModel2s, 2));
+        //添加type3
+        for (int i = 0; i < 1; i++) {
+            List<BaseModel> baseModel3461s = new ArrayList<>();
+            BaseModel left = new BaseModel(lunboPic1, smallPic2, null, null, "楚乔传：哇哈哈相爱相杀", "07-27期");
+            BaseModel middle = new BaseModel(lunboPic2, smallPic2,  null, null, "大标题2","24集全");
+            BaseModel right = new BaseModel(lunboPic3, smallPic2,  null, null, "大标题3","36集全");
+            BaseModel right1 = new BaseModel(lunboPic4, smallPic2,  null, null, "大标题3","36集全");
+            baseModel3461s.add(left);
+            baseModel3461s.add(middle);
+            baseModel3461s.add(right);
+            baseModel3461s.add(right1);
+            ViewModel model346 = new ViewModel(baseModel3461s, 9);
+            list.add(model346);
+        }
         return list;
     }
 }

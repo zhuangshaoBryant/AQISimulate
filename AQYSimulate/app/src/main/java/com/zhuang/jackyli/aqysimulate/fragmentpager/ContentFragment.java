@@ -97,7 +97,7 @@ public class ContentFragment extends Fragment {
         Class clazz = data.getClass();
         Random random = new Random();//默认构造方法
         for (int i = 0; i < 30; i++) {
-            int s = random.nextInt(5) + 1;
+            int s = random.nextInt(6) + 1;
             String methodName = "addCard" + s;
             Method method = clazz.getMethod(methodName);
             List<ViewModel> list1 = (List<ViewModel>) method.invoke(data);

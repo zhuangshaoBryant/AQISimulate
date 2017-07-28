@@ -8,17 +8,17 @@
         android:layout_height="wrap_content"
         android:layout_width="0dp"
         android:layout_weight="1"
-        layout="@layout/base_type5_layout"/>
+        layout="@layout/base_type578_layout"/>
     <include
         android:layout_height="wrap_content"
         android:layout_width="0dp"
         android:layout_weight="1"
-        layout="@layout/base_type5_layout"/>
+        layout="@layout/base_type578_layout"/>
     <include
         android:layout_height="wrap_content"
         android:layout_width="0dp"
         android:layout_weight="1"
-        layout="@layout/base_type5_layout"/>-->
+        layout="@layout/base_type578_layout"/>-->
 
 
 </LinearLayout>
