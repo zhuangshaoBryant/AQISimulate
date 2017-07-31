@@ -1,18 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:clipChildren="false"
     >
 
-    <com.zhuang.jackyli.aqysimulate.ui.MyCycleViewPager xmlns:android="http://schemas.android.com/apk/res/android"
+    <com.zhuang.jackyli.aqysimulate.ui.CycleViewPager
         android:id="@+id/my_lunbo_viewpager"
         android:layout_width="match_parent"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:clipChildren="false"
+        app:autoScrollInterval="5000"
+        app:pageSwitchDuration="800"
         android:layout_marginBottom="10dp"
-        android:layout_height="200dp">
+        android:layout_height="200dp"/>
 
-    </com.zhuang.jackyli.aqysimulate.ui.MyCycleViewPager>
+
 </LinearLayout>
