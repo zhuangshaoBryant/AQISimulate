@@ -15,8 +15,19 @@ import android.view.ViewGroup;
 
 import com.zhuang.jackyli.aqysimulate.R;
 import com.zhuang.jackyli.aqysimulate.adapter.MyRecyclerViewAdapter;
+import com.zhuang.jackyli.aqysimulate.bean.Block;
+import com.zhuang.jackyli.aqysimulate.bean.Card;
+import com.zhuang.jackyli.aqysimulate.bean.Page;
+import com.zhuang.jackyli.aqysimulate.bean.TopBanner;
+import com.zhuang.jackyli.aqysimulate.constant.Constant;
 import com.zhuang.jackyli.aqysimulate.data.ViewModelData;
+import com.zhuang.jackyli.aqysimulate.model.BaseModel;
 import com.zhuang.jackyli.aqysimulate.model.ViewModel;
+import com.zhuang.jackyli.aqysimulate.util.HttpCallbackStringListener;
+import com.zhuang.jackyli.aqysimulate.util.HttpUtil;
+import com.zhuang.jackyli.aqysimulate.util.JsonParseUtil;
+
+import org.json.JSONException;
 
 import java.io.Serializable;
 import java.lang.reflect.InvocationTargetException;
@@ -33,6 +44,7 @@ public class ContentFragment extends Fragment {
     RecyclerView mCardRecyclerView;
     private List<ViewModel> mDataList;
     private static final String TAG = "ContentFragment";
+    private MyRecyclerViewAdapter mRecyclerViewAdapter;
 
     public ContentFragment() {
     }
@@ -68,21 +80,40 @@ public class ContentFragment extends Fragment {
         mCardRecyclerView = (RecyclerView) view.findViewById(R.id.card_recyclerView);
 
 
-        try {
-            if (mDataList == null) {
-                mDataList = new ArrayList<>();
-                List<ViewModel> list1 = initData();
-                mDataList.addAll(list1);
-            }
-        } catch (NoSuchMethodException e) {
-            e.printStackTrace();
-        } catch (InvocationTargetException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
+        if (mDataList == null) {
+            mDataList = new ArrayList<>();
+
+            HttpUtil.doGet(getActivity(), Constant.URL, new HttpCallbackStringListener() {
+                @Override
+                public void onFinish(String response) {
+                    try {
+                        Page page = JsonParseUtil.parseJson(response);
+                        List<Card> cards = page.getCards();
+                       // Log.d(TAG, "cards.size: "+cards.size());
+                        for (Card card : cards) {
+                            List<ViewModel> list1 = ViewModelData.getData(card);
+                            mDataList.addAll(list1);
+                            Log.d(TAG, "mDatalist.size1111"+mDataList.size());
+                            mRecyclerViewAdapter.notifyDataSetChanged();
+                           // mRecyclerViewAdapter.notifyAll();
+                        }
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                }
+
+                @Override
+                public void onError(Exception e) {
+
+                }
+            });
+                /*List<ViewModel> list1 = ViewModelData.getData();
+                mDataList.addAll(list1);*/
         }
-        Log.d("hhh", mDataList.size() + "zuizhong ");
-        MyRecyclerViewAdapter mRecyclerViewAdapter = new MyRecyclerViewAdapter(mDataList);
+
+
+        Log.d(TAG, mDataList.size() + "zuizhong ");
+        mRecyclerViewAdapter = new MyRecyclerViewAdapter(mDataList);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
         mCardRecyclerView.setLayoutManager(linearLayoutManager);
         mCardRecyclerView.setAdapter(mRecyclerViewAdapter);
@@ -105,5 +136,6 @@ public class ContentFragment extends Fragment {
         }
         return list;
     }
+
 
 }
