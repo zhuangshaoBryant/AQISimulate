@@ -4,6 +4,7 @@ import android.util.Log;
 
 import com.zhuang.jackyli.aqysimulate.bean.Block;
 import com.zhuang.jackyli.aqysimulate.bean.Card;
+import com.zhuang.jackyli.aqysimulate.bean.Page;
 import com.zhuang.jackyli.aqysimulate.bean.TopBanner;
 import com.zhuang.jackyli.aqysimulate.constant.Constant;
 import com.zhuang.jackyli.aqysimulate.model.BaseModel;
@@ -51,9 +52,9 @@ public class ViewModelData {
             if (card.getTop_banner() != null && card.getTop_banner().getL_blocks().get(0).getBlock_type() == 23) {
                 TopBanner topBanner = card.getTop_banner();
                 List<BaseModel> baseModels = new ArrayList<>();
-                String firstPic = topBanner.getL_blocks().get(0).getImages().get(0).getUrl();
-                String firstText = topBanner.getL_blocks().get(0).getMetas().size() > 0 ? topBanner.getL_blocks().get(0).getMetas().get(0).getText() : null;
-                String secondText = topBanner.getL_blocks().get(0).getButtons().size() > 0 ? topBanner.getL_blocks().get(0).getButtons().get(0).getText() : null;
+                String firstPic = topBanner.getL_blocks().get(0).getImages()!=null?topBanner.getL_blocks().get(0).getImages().get(0).getUrl():null;
+                String firstText = topBanner.getL_blocks().get(0).getMetas()!=null ? topBanner.getL_blocks().get(0).getMetas().get(0).getText() : null;
+                String secondText = topBanner.getL_blocks().get(0).getButtons()!=null ? topBanner.getL_blocks().get(0).getButtons().get(0).getText() : null;
                 BaseModel baseModel = new BaseModel(firstPic, null, firstText, secondText, null, null);
                 baseModels.add(baseModel);
                 viewModelList.add(new ViewModel(baseModels, 2));
@@ -137,9 +138,9 @@ public class ViewModelData {
             if (card.getTop_banner() != null && card.getTop_banner().getL_blocks().get(0).getBlock_type() == 23) {
                 TopBanner topBanner = card.getTop_banner();
                 List<BaseModel> baseModels = new ArrayList<>();
-                String firstPic = topBanner.getL_blocks().get(0).getImages().get(0).getUrl();
-                String firstText = topBanner.getL_blocks().get(0).getMetas().size() > 0 ? topBanner.getL_blocks().get(0).getMetas().get(0).getText() : null;
-                String secondText = topBanner.getL_blocks().get(0).getButtons().size() > 0 ? topBanner.getL_blocks().get(0).getButtons().get(0).getText() : null;
+                String firstPic = topBanner.getL_blocks().get(0).getImages()!=null?topBanner.getL_blocks().get(0).getImages().get(0).getUrl():null;
+                String firstText = topBanner.getL_blocks().get(0).getMetas()!=null ? topBanner.getL_blocks().get(0).getMetas().get(0).getText() : null;
+                String secondText = topBanner.getL_blocks().get(0).getButtons()!=null ? topBanner.getL_blocks().get(0).getButtons().get(0).getText() : null;
                 BaseModel baseModel = new BaseModel(firstPic, null, firstText, secondText, null, null);
                 baseModels.add(baseModel);
                 viewModelList.add(new ViewModel(baseModels, 2));
@@ -233,7 +234,7 @@ public class ViewModelData {
             if (card.getTop_banner() != null && card.getTop_banner().getL_blocks().get(0).getBlock_type() == 23) {
                 TopBanner topBanner = card.getTop_banner();
                 List<BaseModel> baseModels = new ArrayList<>();
-                String firstText = topBanner.getL_blocks().get(0).getMetas().size() > 0 ? topBanner.getL_blocks().get(0).getMetas().get(0).getText() : null;
+                String firstText = topBanner.getL_blocks().get(0).getMetas()!=null ? topBanner.getL_blocks().get(0).getMetas().get(0).getText() : null;
                 BaseModel baseModel = new BaseModel(null, null, firstText, null, null, null);
                 baseModels.add(baseModel);
                 viewModelList.add(new ViewModel(baseModels, 2));
@@ -304,6 +305,32 @@ public class ViewModelData {
         }
         Log.d("wwww", "returnhou : " + viewModelList.size());
         return viewModelList;
+    }
+
+    /**
+     * 将Page页面转换为List<ViewModel></>
+      * @param page
+     * @return
+     */
+    public static List<ViewModel> getData(Page page){
+        List<ViewModel> viewModelList = new ArrayList<>();
+        List<Card> cards = page.getCards();
+        for (Card card : cards) {
+            viewModelList.addAll(getData(card));
+        }
+        return viewModelList;
+    }
+
+    /**
+     * 获取下一页的url
+     * @param page
+     * @return
+     */
+    public static String getNextUrl(Page page){
+        if (page.getBase()!=null){
+            return page.getBase().getNext_url();
+        }
+        return null;
     }
 
     /**
