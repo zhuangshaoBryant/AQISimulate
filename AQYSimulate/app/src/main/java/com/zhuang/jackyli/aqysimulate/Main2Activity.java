@@ -7,17 +7,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 
-import com.google.gson.Gson;
-import com.zhuang.jackyli.aqysimulate.bean.Page;
-import com.zhuang.jackyli.aqysimulate.util.HttpCallbackBytesListener;
 import com.zhuang.jackyli.aqysimulate.util.HttpCallbackStringListener;
 import com.zhuang.jackyli.aqysimulate.util.HttpUtil;
 import com.zhuang.jackyli.aqysimulate.util.JsonParseUtil;
 
 import org.json.JSONException;
-import org.qiyi.net.Request;
-import org.qiyi.net.callback.IHttpCallback;
-import org.qiyi.net.exception.HttpException;
 
 import java.util.HashMap;
 import java.util.Map;

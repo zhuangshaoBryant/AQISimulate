@@ -3,43 +3,29 @@ package com.zhuang.jackyli.aqysimulate.fragmentpager;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import com.zhuang.jackyli.aqysimulate.MainActivity;
 import com.zhuang.jackyli.aqysimulate.R;
 import com.zhuang.jackyli.aqysimulate.adapter.MyRecyclerViewAdapter;
-import com.zhuang.jackyli.aqysimulate.bean.Block;
-import com.zhuang.jackyli.aqysimulate.bean.Card;
 import com.zhuang.jackyli.aqysimulate.bean.Page;
-import com.zhuang.jackyli.aqysimulate.bean.TopBanner;
 import com.zhuang.jackyli.aqysimulate.constant.Constant;
 import com.zhuang.jackyli.aqysimulate.data.ViewModelData;
-import com.zhuang.jackyli.aqysimulate.model.BaseModel;
 import com.zhuang.jackyli.aqysimulate.model.ViewModel;
 import com.zhuang.jackyli.aqysimulate.util.HttpCallbackStringListener;
 import com.zhuang.jackyli.aqysimulate.util.HttpUtil;
 import com.zhuang.jackyli.aqysimulate.util.JsonParseUtil;
 
 import org.json.JSONException;
-import org.qiyi.net.Request;
-import org.qiyi.net.callback.IHttpCallback;
-import org.qiyi.net.exception.HttpException;
 
 import java.io.Serializable;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -93,7 +79,7 @@ public class ContentFragment extends Fragment {
                     int totalItemCount = mLinearLayoutManager.getItemCount();//全部的个数
                     int pastVisibleItems = mLinearLayoutManager.findFirstVisibleItemPosition();//找到第一个可见的项目
 
-                    if (!isLoading&&visibleItemCount+pastVisibleItems>=(totalItemCount-6)){
+                    if (visibleItemCount+pastVisibleItems>=(totalItemCount-10)){
                         isLoading = true;
                         if(mNextUrl!=null){
                             mNextUrl = mNextUrl+Constant.HOU_ZHUI;

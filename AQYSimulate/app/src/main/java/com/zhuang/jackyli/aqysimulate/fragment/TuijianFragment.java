@@ -1,11 +1,7 @@
 package com.zhuang.jackyli.aqysimulate.fragment;
 
 
-import android.app.Application;
-import android.content.Context;
-import android.icu.util.BuddhistCalendar;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
@@ -14,12 +10,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.zhuang.jackyli.aqysimulate.MyApplication;
 import com.zhuang.jackyli.aqysimulate.R;
 import com.zhuang.jackyli.aqysimulate.adapter.MyFragmentAdapter;
 import com.zhuang.jackyli.aqysimulate.fragmentpager.ContentFragment;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
