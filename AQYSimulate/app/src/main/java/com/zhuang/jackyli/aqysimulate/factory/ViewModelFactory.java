@@ -38,7 +38,6 @@ public class ViewModelFactory {
                 new ViewModel9().onBindData(holder, viewModel);
                 break;
             default:
-                break;  //新添加的
         }
     }
 
