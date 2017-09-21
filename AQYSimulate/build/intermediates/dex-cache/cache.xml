@@ -3,6 +3,24 @@
 
     <item
         is-multidex="true"
+        jar="C:\Users\jackyli\.android\build-cache\fe076d71f4a696111498dba8ea81a13e356d4918\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="6a022bf00ccd0948a8180c505e8e458bbddd43a6">
+        <dex dex="E:\work\Android\project\AQISimulate\AQYSimulate\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_0ebc5dec89e381873e13e55a248325dd007c06fb\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\jackyli\.android\build-cache\617fd37f4d2818112c10d82a7796e09f4db9ba11\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="9602d1e79216cd0e61d22fad40caee64365f29ac">
+        <dex dex="E:\work\Android\project\AQISimulate\AQYSimulate\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_15903a03a33337aa8c81f542a455727b51769bab\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="C:\Users\jackyli\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio\1.9.0\f824591a0016efbaeddb8300bee54832a1398cfa\okio-1.9.0.jar"
         jumboMode="true"
         optimize="true"
@@ -18,6 +36,15 @@
         revision="26.0.0"
         sha1="b9cd8fc6bd15cb915735d34535db30ece0c44603">
         <dex dex="E:\work\Android\project\AQISimulate\AQYSimulate\app\build\intermediates\transforms\dex\debug\folders\1000\10\constraint-layout-solver-1.0.2_3e986368a7e174285f4954af5dab4c69561aac7f\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\jackyli\.android\build-cache\3eb7844f4b97acbb8ae3ee131bd3a1212dea08b7\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="9644834bb403cfd73f5695b908a933c1ff236217">
+        <dex dex="E:\work\Android\project\AQISimulate\AQYSimulate\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_fa975c7201f8b8ee3477f222cc2012d3c1745894\classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -54,6 +81,24 @@
         revision="26.0.0"
         sha1="381fc1096ba65040d8e80ea43b2e1d9bad02345e">
         <dex dex="E:\work\Android\project\AQISimulate\AQYSimulate\app\build\intermediates\transforms\dex\debug\folders\1000\10\logging-interceptor-3.4.1_d39165cc05d76cb0a1f1bb35edffebe15af2203d\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\jackyli\.android\build-cache\76e4aa4a5f3c8bbf887ea6046841d628daba6825\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="1c6d36281ce1c28ebeb58155c3ceac425dcec5e2">
+        <dex dex="E:\work\Android\project\AQISimulate\AQYSimulate\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_afdef9ddd54ba1cd71b0c6e942e86c8916ab4532\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="E:\work\Android\project\AQISimulate\AQYSimulate\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="823b8938b7711720b7509e8cf509fcca6ddb0b12">
+        <dex dex="E:\work\Android\project\AQISimulate\AQYSimulate\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_65116389d29b29cf9772ba01190c2c1c8df70b99\classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -102,12 +147,39 @@
     </item>
     <item
         is-multidex="true"
+        jar="E:\work\Android\project\AQISimulate\AQYSimulate\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
+        <dex dex="E:\work\Android\project\AQISimulate\AQYSimulate\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_c3b4ec4e221c896e1351963dc70a25d125172426\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\jackyli\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\logging-interceptor\3.4.1\381fc1096ba65040d8e80ea43b2e1d9bad02345e\logging-interceptor-3.4.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="381fc1096ba65040d8e80ea43b2e1d9bad02345e">
+        <dex dex="E:\work\Android\project\AQISimulate\AQYSimulate\app\build\intermediates\transforms\dex\debug\folders\1000\10\logging-interceptor-3.4.1_d39165cc05d76cb0a1f1bb35edffebe15af2203d\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="C:\Users\jackyli\.android\build-cache\b40c2e685563cb6618eadc1a97c7dc3d9a14a254\output\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="26.0.0"
         sha1="cddcd0fb93bc70e27325f2f715b2710332004ebb">
         <dex dex="E:\work\Android\project\AQISimulate\AQYSimulate\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_50d313fe7ff78687abf516aff441092e3a311114\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\jackyli\.android\build-cache\db7b488d2cedfab9d90aad3f3c8ad8331d609467\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="8bf2709be142a2d0784d5e548842026dc28079dc">
+        <dex dex="E:\work\Android\project\AQISimulate\AQYSimulate\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_b5d18f460e0bf6066dabb4638807c202d6f9f634\classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -165,6 +237,24 @@
     </item>
     <item
         is-multidex="true"
+        jar="C:\Users\jackyli\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\okhttp\3.4.1\c7c4f9e35c2fd5900da24f9872e3971801f08ce0\okhttp-3.4.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="c7c4f9e35c2fd5900da24f9872e3971801f08ce0">
+        <dex dex="E:\work\Android\project\AQISimulate\AQYSimulate\app\build\intermediates\transforms\dex\debug\folders\1000\10\okhttp-3.4.1_a4f43e3df71b7bebf9c7e56bd39a68328b5999f3\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\jackyli\.android\build-cache\b40c2e685563cb6618eadc1a97c7dc3d9a14a254\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="cddcd0fb93bc70e27325f2f715b2710332004ebb">
+        <dex dex="E:\work\Android\project\AQISimulate\AQYSimulate\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_50d313fe7ff78687abf516aff441092e3a311114\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="E:\work\Android\project\AQISimulate\AQYSimulate\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
         jumboMode="true"
         optimize="true"
@@ -189,6 +279,42 @@
         revision="26.0.0"
         sha1="44ee06abb66da30f5855e6bf54574e64cdcd982a">
         <dex dex="E:\work\Android\project\AQISimulate\AQYSimulate\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_f096142df4594373acd2c904d9cee6278fabc7c1\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\jackyli\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio\1.9.0\f824591a0016efbaeddb8300bee54832a1398cfa\okio-1.9.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="f824591a0016efbaeddb8300bee54832a1398cfa">
+        <dex dex="E:\work\Android\project\AQISimulate\AQYSimulate\app\build\intermediates\transforms\dex\debug\folders\1000\10\okio-1.9.0_96db9a198345d3cf8828594e15fd06c5a6a9a92e\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\jackyli\.gradle\caches\modules-2\files-2.1\com.parse.bolts\bolts-tasks\1.4.0\d85884acf6810a3bbbecb587f239005cbc846dc4\bolts-tasks-1.4.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="d85884acf6810a3bbbecb587f239005cbc846dc4">
+        <dex dex="E:\work\Android\project\AQISimulate\AQYSimulate\app\build\intermediates\transforms\dex\debug\folders\1000\10\bolts-tasks-1.4.0_4ab94f4cc08ade826e8a6ad4b537b95fee5cd7d9\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\jackyli\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.8.1\2a8e0aa38a2e21cb39e2f5a7d6704cbdc941da0\gson-2.8.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="02a8e0aa38a2e21cb39e2f5a7d6704cbdc941da0">
+        <dex dex="E:\work\Android\project\AQISimulate\AQYSimulate\app\build\intermediates\transforms\dex\debug\folders\1000\10\gson-2.8.1_6e4cb7573006ab4482698c4e08b10446fde7fc9e\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\jackyli\.android\build-cache\0d1be6c2ce6e31167e060400cecedfd359f3b647\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="da8b8f3f1fed75b39f0b9228bea5512f10bfff6f">
+        <dex dex="E:\work\Android\project\AQISimulate\AQYSimulate\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_eab5d84cdcf91b6fee69a319b4488a5eb8aee768\classes.dex" />
     </item>
     <item
         is-multidex="true"

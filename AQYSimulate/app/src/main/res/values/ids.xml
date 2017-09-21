@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="id" name="left_icon"/>
+    <item type="id" name="text_textview"/>
+    <item type="id" name="right_arrow"/>
+    <item type="id" name="right_textview"/>
+    <item type="id" name="linear_layout"/>
+    <item type="id" name="big_pic"/>
+    <item type="id" name="right_up_pic"/>
+    <item type="id" name="right_bottom_text"/>
+    <item type="id" name="left_bottom_text"/>
+    <item type="id" name="up_title"/>
+    <item type="id" name="down_title"/>
+    <item type="id" name="type55_linearlayout"/>
+    <item type="id" name="green_text"/>
+    <item type="id" name="green_imageview"/>
+    <item type="id" name="my_lunbo_viewpager"/>
+    <item type="id" name="big_pic9"/>
+    <item type="id" name="right_up_pic9"/>
+    <item type="id" name="right_bottom_text9"/>
+    <item type="id" name="left_bottom_text9"/>
+    <item type="id" name="up_title9"/>
+    <item type="id" name="down_title9"/>
+
+</resources>

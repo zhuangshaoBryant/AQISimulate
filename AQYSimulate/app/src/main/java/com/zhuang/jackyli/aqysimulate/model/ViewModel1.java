@@ -27,6 +27,7 @@ public class ViewModel1 implements AbsModel {
     @Override
     public RecyclerView.ViewHolder getViewHolder(ViewGroup parent, int modelType) {
         View view = new View(parent.getContext());
+
         RelativeLayout.LayoutParams layoutParams =new RelativeLayout.LayoutParams(
                 RelativeLayout.LayoutParams.MATCH_PARENT, ToolUtil.dip2px(parent.getContext(),7));
         view.setLayoutParams(layoutParams);

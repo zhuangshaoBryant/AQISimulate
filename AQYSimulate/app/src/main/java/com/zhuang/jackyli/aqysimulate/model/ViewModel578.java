@@ -1,14 +1,22 @@
 package com.zhuang.jackyli.aqysimulate.model;
 
+import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
+import android.text.TextUtils;
+import android.util.TypedValue;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.facebook.drawee.drawable.ScalingUtils;
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.zhuang.jackyli.aqysimulate.R;
+import com.zhuang.jackyli.aqysimulate.util.ToolUtil;
 
 /**
  * Created by jackyli on 2017/7/26.
@@ -69,9 +77,16 @@ public class ViewModel578 implements AbsModel {
 
     @Override
     public RecyclerView.ViewHolder getViewHolder(ViewGroup parent, int modelType) {
-
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.type55_recyclerview_item, parent, false);
-        mModel5Holder = new ViewModel5Holder(view, modelType, parent);
+        LinearLayout layout = new LinearLayout(parent.getContext());
+        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT
+        );
+        layout.setOrientation(LinearLayout.HORIZONTAL);
+        layout.setLayoutParams(layoutParams);
+        layout.setId(R.id.type55_linearlayout);
+       // View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.type55_recyclerview_item, parent, false);
+        mModel5Holder = new ViewModel5Holder(layout, modelType, parent);
         return mModel5Holder;
     }
 
@@ -105,7 +120,8 @@ public class ViewModel578 implements AbsModel {
 
         private void addRightView(ViewGroup parent, LinearLayout.LayoutParams params) {
             View rightView;
-            rightView = LayoutInflater.from(parent.getContext()).inflate(R.layout.base_type578_layout, mLinearLayout, false);
+            rightView = getType578View(parent);
+            //rightView = LayoutInflater.from(parent.getContext()).inflate(R.layout.base_type578_layout, mLinearLayout, false);
             rightView.setLayoutParams(params);
             mLinearLayout.addView(rightView);
             mRightGreenSimpleDraweeView = (SimpleDraweeView) rightView.findViewById(R.id.green_imageview);
@@ -114,7 +130,8 @@ public class ViewModel578 implements AbsModel {
 
         private void addMiddleView(ViewGroup parent, LinearLayout.LayoutParams params) {
             View middleView;
-            middleView = LayoutInflater.from(parent.getContext()).inflate(R.layout.base_type578_layout, mLinearLayout, false);
+            middleView = getType578View(parent);
+            //middleView = LayoutInflater.from(parent.getContext()).inflate(R.layout.base_type578_layout, mLinearLayout, false);
             middleView.setLayoutParams(params);
             mLinearLayout.addView(middleView);
             mMiddleGreenSimpleDraweeView = (SimpleDraweeView) middleView.findViewById(R.id.green_imageview);
@@ -123,11 +140,53 @@ public class ViewModel578 implements AbsModel {
 
         private void addLeftView(ViewGroup parent, LinearLayout.LayoutParams params) {
             View leftView;
-            leftView = LayoutInflater.from(parent.getContext()).inflate(R.layout.base_type578_layout, mLinearLayout, false);
+            leftView = getType578View(parent);
+            //leftView = LayoutInflater.from(parent.getContext()).inflate(R.layout.base_type578_layout, mLinearLayout, false);
             leftView.setLayoutParams(params);
             mLinearLayout.addView(leftView);
             mLeftGreenSimpleDraweeView = (SimpleDraweeView) leftView.findViewById(R.id.green_imageview);
             mLeftGreenText = (TextView) leftView.findViewById(R.id.green_text);
         }
     }
+
+    private static View getType578View(ViewGroup parent){
+        //根布局
+        LinearLayout layout = new LinearLayout(parent.getContext());
+        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT
+        );
+        layout.setOrientation(LinearLayout.HORIZONTAL);
+        layout.setLayoutParams(layoutParams);
+        layout.setGravity(Gravity.CENTER);
+        layout.setPadding(ToolUtil.dip2px(parent.getContext(),20),
+                ToolUtil.dip2px(parent.getContext(),20),
+                ToolUtil.dip2px(parent.getContext(),20),
+                ToolUtil.dip2px(parent.getContext(),20));
+
+        //TextView
+        TextView green_text = new TextView(parent.getContext());
+        LinearLayout.LayoutParams up_title_layoutParams = new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.WRAP_CONTENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT
+        );
+        green_text.setLayoutParams(up_title_layoutParams);
+        green_text.setId(R.id.green_text);
+        green_text.setTextColor(Color.parseColor("#49b53f"));
+        green_text.setTextSize(TypedValue.COMPLEX_UNIT_SP,14);
+        green_text.setPadding(0, 0,
+                ToolUtil.dip2px(parent.getContext(),10), 0);
+        layout.addView(green_text);
+
+        //SimpleDraweeView控件
+        SimpleDraweeView simpleDraweeView = new SimpleDraweeView(parent.getContext());
+        LinearLayout.LayoutParams simpleDraweeViewLayoutParams = new LinearLayout.LayoutParams(
+                ToolUtil.dip2px(parent.getContext(),12),
+                ToolUtil.dip2px(parent.getContext(),12));
+        simpleDraweeView.setLayoutParams(simpleDraweeViewLayoutParams);
+        simpleDraweeView.setId(R.id.green_imageview);
+        layout.addView(simpleDraweeView);
+        return layout;
+    }
+
 }
