@@ -18,7 +18,6 @@ import java.util.List;
  */
 
 public class ViewModelData {
-    private static int a = 31;//新添加a
 
     /**
      * 将Card数据转换为List<ViewModel></>
